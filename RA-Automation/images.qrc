@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/images.jpeg</file>
+        <file>Images/burger1.png</file>
+        <file>Images/burger2.png</file>
+        <file>Images/deset1.png</file>
+        <file>Images/drink1.png</file>
+        <file>Images/drink2.png</file>
+        <file>Images/Salad1.png</file>
+        <file>Images/salad2.png</file>
+        <file>Images/burger3.png</file>
+        <file>Images/8485.11521.brussels.the-hotel-brussels.amenity.restaurant-AD3WAP2L-13000-853x480.jpeg</file>
+        <file>Images/dining.jpg</file>
+        <file>Images/dining-2.png</file>
+        <file>Images/dining-3.jpg</file>
+        <file>Images/dining-4.jpeg</file>
+        <file>Images/dining-5.jpg</file>
+        <file>Images/dining-6.jpeg</file>
+        <file>Images/dining-7.jpg</file>
+        <file>Images/dining-8.jpg</file>
+        <file>Images/dining-9.jpg</file>
+        <file>Images/dininig-7.jpg</file>
+        <file>Images/dininig-10.jpeg</file>
+        <file>Images/dininig-11.jpeg</file>
+        <file>Images/dining-12.jpeg</file>
+        <file>Images/burger-3</file>
+        <file>Images/large.jpeg</file>
+        <file>Images/burger-3.png</file>
+        <file>Images/burger-4.jpg</file>
+        <file>Images/cheeseburger_1.jpg</file>
+    </qresource>
+</RCC>
