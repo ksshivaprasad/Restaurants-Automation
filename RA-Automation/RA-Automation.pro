@@ -26,36 +26,42 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    saladdialog.cpp \
     deserts.cpp \
     burgers.cpp \
     drinks.cpp \
     reservetable.cpp \
     employees.cpp \
     feedback.cpp \
-    reports.cpp
+    reports.cpp \
+    managemenu.cpp \
+    managegrocery.cpp \
+    managerecipe.cpp
 
 HEADERS += \
         mainwindow.h \
-    saladdialog.h \
     deserts.h \
     burgers.h \
     drinks.h \
     reservetable.h \
     employees.h \
     feedback.h \
-    reports.h
+    reports.h \
+    managemenu.h \
+    managegrocery.h \
+    managerecipe.h
 
 FORMS += \
         mainwindow.ui \
-    saladdialog.ui \
     deserts.ui \
     burgers.ui \
     drinks.ui \
     reservetable.ui \
     employees.ui \
     feedback.ui \
-    reports.ui
+    reports.ui \
+    managemenu.ui \
+    managegrocery.ui \
+    managerecipe.ui
 
 RESOURCES += \
     images.qrc

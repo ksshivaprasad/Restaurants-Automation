@@ -21,7 +21,6 @@ public:
     bool updateEmployees(QString, QString, QString, QString);
     bool retrieveEmployees(vector<employees*> *emp);
 
-
     ~reports();
 
 private slots:
