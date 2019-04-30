@@ -35,7 +35,7 @@ void viewOrder::setOrderItems(order* currentOrder)
     ui->tableNoEdit->setText(QString::number(currentOrder->getTable_id()));
     for(int i =0;i< orderItems.size();i++)
     {
-        if(orderItems.at(i) > 0)
+        if(orderItems.at(i) != 0)
         {
             ui->viewOrderTableWidget->setItem(i, 0,  new QTableWidgetItem(QString::number(orderItems.at(i)->getItem_id())));
             ui->viewOrderTableWidget->setItem(i, 1, new QTableWidgetItem(orderItems.at(i)->getMenuItem()->getName()));
