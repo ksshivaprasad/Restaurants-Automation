@@ -1,0 +1,4 @@
+1,Lemon pea salad,Tangy salad,2,4	
+2,Scrum-delicious burger,Patty burger,3,6.99	
+3,Chicken burger,Burger with chicken patty,3,10.99	
+4,Chicken curry,chicken curry with mild spices,4,10.99	

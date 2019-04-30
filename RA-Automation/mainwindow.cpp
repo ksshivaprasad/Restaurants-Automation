@@ -9,7 +9,8 @@
 #include "feedback.h"
 #include "qmessagebox.h"
 #include "managemenu.h"
-
+#include "managerecipe.h"
+#include <QDebug>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -22,15 +23,29 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_actionGrocery_triggered()
-{
-
-}
-
 void MainWindow::on_actionMenu_triggered()
 {
-    manageMenu ManageMenu;
-    ManageMenu.setModal(true);
-    ManageMenu.exec();
+
+    menu.show();
+
 }
+
+void MainWindow::on_actionRecipe_triggered()
+{
+    recipe.show();
+
+}
+void MainWindow::on_actionGrocery_triggered()
+{
+    grocery.show();
+}
+void MainWindow::on_actionViewMenu_triggered()
+{
+    menuOrder.show();
+}
+void MainWindow::on_actionViewOrder_triggered()
+{
+    viewAllOrders.setAllOrders();
+    viewAllOrders.show();
+}
+

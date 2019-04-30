@@ -33,9 +33,28 @@ SOURCES += \
     employees.cpp \
     feedback.cpp \
     reports.cpp \
-    managemenu.cpp \
     managegrocery.cpp \
-    managerecipe.cpp
+    managerecipe.cpp \
+    reservationcontroller.cpp \
+    ordercontroller.cpp \
+    grocerycontroller.cpp \
+    menucontroller.cpp \
+    menuitem.cpp \
+    recipe.cpp \
+    groceryitem.cpp \
+    recipecontroller.cpp \
+    fileaccess.cpp \
+    recipebuilder.cpp \
+    grocerybuilder.cpp \
+    menuitembuilder.cpp \
+    notificationcontroller.cpp \
+    managemenu.cpp \
+    viewrecipe.cpp \
+    order.cpp \
+    orderitem.cpp \
+    manageorder.cpp \
+    vieworder.cpp \
+    viewallorders.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,9 +65,29 @@ HEADERS += \
     employees.h \
     feedback.h \
     reports.h \
-    managemenu.h \
     managegrocery.h \
-    managerecipe.h
+    managerecipe.h \
+    reservationcontroller.h \
+    ordercontroller.h \
+    grocerycontroller.h \
+    menucontroller.h \
+    menuitem.h \
+    recipe.h \
+    groceryitem.h \
+    recipecontroller.h \
+    fileaccess.h \
+    recipebuilder.h \
+    grocerybuilder.h \
+    menuitembuilder.h \
+    notificationcontroller.h \
+    managemenu.h \
+    viewrecipe.h \
+    order.h \
+    orderitem.h \
+    manageorder.h \
+    vieworder.h \
+    iobserverinterface.h \
+    viewallorders.h
 
 FORMS += \
         mainwindow.ui \
@@ -59,9 +98,21 @@ FORMS += \
     employees.ui \
     feedback.ui \
     reports.ui \
-    managemenu.ui \
-    managegrocery.ui \
-    managerecipe.ui
+    manageMenu.ui \
+    manageRecipe.ui \
+    viewrecipe.ui \
+    manageGrocery.ui \
+    viewOrder.ui \
+    manageOrder.ui \
+    vieworder.ui \
+    viewallorders.ui
 
 RESOURCES += \
     images.qrc
+    
+OTHER_FILES += \
+    Recipes.txt \
+    Grocery.txt \
+    Menu.txt \
+    Tables.txt \
+    Order.txt

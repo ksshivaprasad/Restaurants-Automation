@@ -12,9 +12,11 @@ class viewRecipe : public QDialog
     Q_OBJECT
 
 public:
-    explicit viewRecipe(QWidget *parent = 0);
+    explicit viewRecipe(QWidget *parent = 0,int id=0);
     ~viewRecipe();
 
+    void setInstructions(int);
+    void populateGroceryTable(int);
 private:
     Ui::viewRecipe *ui;
 };

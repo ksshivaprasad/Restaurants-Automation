@@ -14,6 +14,14 @@ class manageGrocery : public QDialog
 public:
     explicit manageGrocery(QWidget *parent = 0);
     ~manageGrocery();
+    void pupulateGrocery();
+    QList<int> getGroceryList();
+    void init();
+
+public slots:
+    void on_removeGroceryButton_clicked();
+
+    void on_addGroceryButton_clicked();
 
 private:
     Ui::manageGrocery *ui;

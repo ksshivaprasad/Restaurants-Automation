@@ -15,6 +15,9 @@ public:
     explicit viewAllOrders(QWidget *parent = 0);
     ~viewAllOrders();
 
+    void setAllOrders();
+public slots:
+    void on_prepareOrderButton_clicked();
 private:
     Ui::viewAllOrders *ui;
 };

@@ -2,7 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "managemenu.h"
+#include "managerecipe.h"
+#include "managegrocery.h"
+#include "manageorder.h"
+#include "viewallorders.h"
 namespace Ui {
 class MainWindow;
 }
@@ -15,27 +19,27 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+
+public slots:
+    void on_actionViewMenu_triggered();
+      void on_actionViewOrder_triggered();
 private slots:
-//void on_actionBurgers_triggered();
-
-  //  void on_actionSalads_triggered();
-
-    //void on_actionDrinks_triggered();
-
-    //void on_actionTable_triggered();
-
-    //void on_actionEmployees_triggered();
-
-    //void on_actionCustomer_triggered();
-
-    //void on_pushButton_clicked();
 
     void on_actionGrocery_triggered();
 
     void on_actionMenu_triggered();
 
+    void on_actionRecipe_triggered();
+
+
+
 private:
     Ui::MainWindow *ui;
+    manageMenu menu;
+    manageRecipe recipe;
+    manageGrocery grocery;
+    manageOrder menuOrder;
+    viewAllOrders viewAllOrders;
 };
 
 #endif // MAINWINDOW_H
