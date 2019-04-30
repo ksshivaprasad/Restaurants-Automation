@@ -62,12 +62,12 @@ int ReservationController::freeTable(int pos)
        return 0;
     //int pos = 0;
 
-    free_tables = BitSet(free_tables,pos);
+    free_tables = BitSet(free_tables,(pos-1));
     qDebug() << QString::number( free_tables, 2 );
 
     tableList.append(QString::number(free_tables));
 
-    qDebug() << "Postion: "<<(pos+1);
+    qDebug() << "Postion: "<<(pos-1);
     qDebug() << "Number available: " << free_tables;
     fileAccess.writeToFile(TABLE_FILE,tableList);
     return (pos+1);

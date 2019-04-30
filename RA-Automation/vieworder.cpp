@@ -3,6 +3,7 @@
 #include "order.h"
 #include "orderitem.h"
 #include "ordercontroller.h"
+#include "reservationcontroller.h"
 #include<QPushButton>
 #include<QHBoxLayout>
 #include<QDebug>
@@ -91,5 +92,6 @@ void viewOrder::on_submitOrderButton_clicked()
 {
     qDebug() << "In Submit Order";
     OrderController::getInstance()->submitOrder(this->myOrder);
+    ReservationController::getInstance()->freeTable(this->myOrder->getTable_id());
 
 }
