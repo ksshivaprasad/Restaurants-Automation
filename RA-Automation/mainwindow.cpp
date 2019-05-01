@@ -6,13 +6,15 @@
 #include "drinks.h"
 #include "reservetable.h"
 #include "employees.h"
-#include "feedback.h"
+#include "managefeedback.h"
 #include "qmessagebox.h"
 #include "managemenu.h"
 #include "managerecipe.h"
 #include "ui_managemenu.h"
 #include "managepay.h"
-
+#include "managefeedback.h"
+#include "ui_managefeedback.h"
+#include "reviewreport.h"
 
 #include <QDebug>
 MainWindow::MainWindow(QWidget *parent) :
@@ -62,4 +64,17 @@ void MainWindow::on_actionExit_triggered()
 void MainWindow::on_actionPayment_triggered()
 {
     managePayment.show();
+}
+
+void MainWindow::on_actionFeedback_triggered()
+{
+    Feedback feedback;
+    feedback.exec();
+    //feedback.show();
+}
+
+void MainWindow::on_actionFeedback_2_triggered()
+{
+    reviewReport review;
+    review.exec();
 }

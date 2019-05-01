@@ -38,6 +38,10 @@ private slots:
     void on_actionPayment_triggered();
 
 
+    void on_actionFeedback_triggered();
+
+    void on_actionFeedback_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     manageMenu menu;

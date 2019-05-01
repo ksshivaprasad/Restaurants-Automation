@@ -105,6 +105,7 @@ void manageOrder::on_reserveTableButton_clicked()
     } else
     {
         ui->reserveTableButton->setEnabled(false);
+        ui->createOrderButton->setEnabled(true);
     }
 
 }
@@ -114,6 +115,9 @@ void manageOrder::on_viewOrderButton_clicked()
     qDebug() << "In View Order";
     viewOrder* viewOrder_m = new viewOrder(this);
     viewOrder_m->setOrderItems(currentOrder);
+
+    ui->createOrderButton->setEnabled(false);
+
     viewOrder_m->show();
     //viewOrder_m::isVisible();
 

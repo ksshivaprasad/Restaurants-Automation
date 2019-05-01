@@ -2,9 +2,9 @@
 #include "grocerybuilder.h"
 #include "groceryitem.h"
 #include "fileaccess.h"
-#include<QString>
-#include<QList>
-#include<QDebug>
+#include <QString>
+#include <QList>
+#include <QDebug>
 GroceryController* GroceryController::INSTANCE=0;
 QString GROCERY_FILE_NAME = "/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation/Grocery.txt";
 GroceryController::GroceryController()

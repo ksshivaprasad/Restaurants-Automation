@@ -13,6 +13,7 @@ class viewAllOrders : public QWidget
 
 public:
     explicit viewAllOrders(QWidget *parent = 0);
+    void clearLayout(QLayout *layout);
     ~viewAllOrders();
 
     void setAllOrders();

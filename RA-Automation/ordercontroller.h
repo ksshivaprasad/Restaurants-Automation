@@ -15,7 +15,7 @@ private:
 public:
     static OrderController* getInstance();
      order* createOrder(int table_id);
-     void removeOrder(int order_id);
+     void removeOrder(int table_id);
      QList<order*> getAllActiveOrders();
      QList<order*> getAllSubmittedOrders();
      void submitOrder(order* order);

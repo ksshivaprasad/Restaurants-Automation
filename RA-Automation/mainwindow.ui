@@ -465,6 +465,8 @@
     <addaction name="separator"/>
     <addaction name="actionViewNotification"/>
     <addaction name="separator"/>
+    <addaction name="actionFeedback_2"/>
+    <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuChef">
@@ -482,6 +484,8 @@
     <addaction name="separator"/>
     <addaction name="actionPayment"/>
     <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionFeedback"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -595,6 +599,16 @@
   <action name="actionPayment">
    <property name="text">
     <string>Payment</string>
+   </property>
+  </action>
+  <action name="actionFeedback">
+   <property name="text">
+    <string>Feedback</string>
+   </property>
+  </action>
+  <action name="actionFeedback_2">
+   <property name="text">
+    <string>Feedback</string>
    </property>
   </action>
  </widget>

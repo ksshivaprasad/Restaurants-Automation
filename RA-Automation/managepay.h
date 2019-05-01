@@ -13,6 +13,7 @@ class managePay : public QDialog
 
 public:
     explicit managePay(QWidget *parent = 0);
+    void clearLayout(QLayout *layout);
     ~managePay();
 
 private slots:

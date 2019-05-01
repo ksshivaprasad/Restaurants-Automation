@@ -13,12 +13,15 @@ RecipeController::RecipeController()
 {
     init();
 }
+
 RecipeController* RecipeController::getInstance()
 {
-           if(INSTANCE == NULL)
-                INSTANCE = new RecipeController();
-            return INSTANCE;
+    if(INSTANCE == NULL)
+       INSTANCE = new RecipeController();
+
+    return INSTANCE;
 }
+
 QStringList RecipeController::getRecipeAsStringList()
 {
     QStringList list ;
@@ -29,6 +32,7 @@ QStringList RecipeController::getRecipeAsStringList()
     }
     return list;
 }
+
 void RecipeController::addRecipe(int id_g,QString name, QString instructions,QList<int> GroceryList,int quantity,int fileWrite)
 {
     FileAccess fileAccess;

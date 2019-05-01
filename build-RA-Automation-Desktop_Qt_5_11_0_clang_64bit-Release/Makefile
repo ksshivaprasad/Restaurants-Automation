@@ -57,7 +57,6 @@ SOURCES       = ../RA-Automation/main.cpp \
 		../RA-Automation/drinks.cpp \
 		../RA-Automation/reservetable.cpp \
 		../RA-Automation/employees.cpp \
-		../RA-Automation/feedback.cpp \
 		../RA-Automation/reports.cpp \
 		../RA-Automation/managegrocery.cpp \
 		../RA-Automation/managerecipe.cpp \
@@ -81,14 +80,16 @@ SOURCES       = ../RA-Automation/main.cpp \
 		../RA-Automation/manageorder.cpp \
 		../RA-Automation/vieworder.cpp \
 		../RA-Automation/viewallorders.cpp \
-		../RA-Automation/managepay.cpp qrc_images.cpp \
+		../RA-Automation/managepay.cpp \
+		../RA-Automation/managefeedback.cpp \
+		../RA-Automation/feedbackcontroller.cpp \
+		../RA-Automation/reviewreport.cpp qrc_images.cpp \
 		moc_mainwindow.cpp \
 		moc_deserts.cpp \
 		moc_burgers.cpp \
 		moc_drinks.cpp \
 		moc_reservetable.cpp \
 		moc_employees.cpp \
-		moc_feedback.cpp \
 		moc_reports.cpp \
 		moc_managegrocery.cpp \
 		moc_managerecipe.cpp \
@@ -97,7 +98,9 @@ SOURCES       = ../RA-Automation/main.cpp \
 		moc_manageorder.cpp \
 		moc_vieworder.cpp \
 		moc_viewallorders.cpp \
-		moc_managepay.cpp
+		moc_managepay.cpp \
+		moc_managefeedback.cpp \
+		moc_reviewreport.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		deserts.o \
@@ -105,7 +108,6 @@ OBJECTS       = main.o \
 		drinks.o \
 		reservetable.o \
 		employees.o \
-		feedback.o \
 		reports.o \
 		managegrocery.o \
 		managerecipe.o \
@@ -130,6 +132,9 @@ OBJECTS       = main.o \
 		vieworder.o \
 		viewallorders.o \
 		managepay.o \
+		managefeedback.o \
+		feedbackcontroller.o \
+		reviewreport.o \
 		qrc_images.o \
 		moc_mainwindow.o \
 		moc_deserts.o \
@@ -137,7 +142,6 @@ OBJECTS       = main.o \
 		moc_drinks.o \
 		moc_reservetable.o \
 		moc_employees.o \
-		moc_feedback.o \
 		moc_reports.o \
 		moc_managegrocery.o \
 		moc_managerecipe.o \
@@ -146,7 +150,9 @@ OBJECTS       = main.o \
 		moc_manageorder.o \
 		moc_vieworder.o \
 		moc_viewallorders.o \
-		moc_managepay.o
+		moc_managepay.o \
+		moc_managefeedback.o \
+		moc_reviewreport.o
 DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/qdevice.pri \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/device_config.prf \
@@ -309,6 +315,7 @@ DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pr
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/qt_config.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_post.prf \
+		../RA-Automation/.qmake.stash \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/mac/sdk.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/toolchain.prf \
@@ -341,7 +348,6 @@ DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pr
 		../RA-Automation/drinks.h \
 		../RA-Automation/reservetable.h \
 		../RA-Automation/employees.h \
-		../RA-Automation/feedback.h \
 		../RA-Automation/reports.h \
 		../RA-Automation/managegrocery.h \
 		../RA-Automation/managerecipe.h \
@@ -366,14 +372,16 @@ DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pr
 		../RA-Automation/vieworder.h \
 		../RA-Automation/iobserverinterface.h \
 		../RA-Automation/viewallorders.h \
-		../RA-Automation/managepay.h ../RA-Automation/main.cpp \
+		../RA-Automation/managepay.h \
+		../RA-Automation/managefeedback.h \
+		../RA-Automation/feedbackcontroller.h \
+		../RA-Automation/reviewreport.h ../RA-Automation/main.cpp \
 		../RA-Automation/mainwindow.cpp \
 		../RA-Automation/deserts.cpp \
 		../RA-Automation/burgers.cpp \
 		../RA-Automation/drinks.cpp \
 		../RA-Automation/reservetable.cpp \
 		../RA-Automation/employees.cpp \
-		../RA-Automation/feedback.cpp \
 		../RA-Automation/reports.cpp \
 		../RA-Automation/managegrocery.cpp \
 		../RA-Automation/managerecipe.cpp \
@@ -397,7 +405,10 @@ DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pr
 		../RA-Automation/manageorder.cpp \
 		../RA-Automation/vieworder.cpp \
 		../RA-Automation/viewallorders.cpp \
-		../RA-Automation/managepay.cpp
+		../RA-Automation/managepay.cpp \
+		../RA-Automation/managefeedback.cpp \
+		../RA-Automation/feedbackcontroller.cpp \
+		../RA-Automation/reviewreport.cpp
 QMAKE_TARGET  = RA-Automation
 DESTDIR       = 
 TARGET        = RA-Automation.app/Contents/MacOS/RA-Automation
@@ -411,7 +422,7 @@ EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ACTIVE_ARCHS), $(EXPORT_ACTIVE_
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_feedback.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h $(OBJECTS)  
 	@test -d RA-Automation.app/Contents/MacOS/ || mkdir -p RA-Automation.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -577,6 +588,7 @@ Makefile: ../RA-Automation/RA-Automation.pro /Users/konalesureshs/Qt/5.11.0/clan
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/qt_config.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/mac/sdk.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/toolchain.prf \
@@ -772,6 +784,7 @@ Makefile: ../RA-Automation/RA-Automation.pro /Users/konalesureshs/Qt/5.11.0/clan
 /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/qt_config.prf:
 /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang/qmake.conf:
 /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/exclusive_builds.prf:
 /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/mac/sdk.prf:
 /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/toolchain.prf:
@@ -835,9 +848,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../RA-Automation/images.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../RA-Automation/mainwindow.h ../RA-Automation/deserts.h ../RA-Automation/burgers.h ../RA-Automation/drinks.h ../RA-Automation/reservetable.h ../RA-Automation/employees.h ../RA-Automation/feedback.h ../RA-Automation/reports.h ../RA-Automation/managegrocery.h ../RA-Automation/managerecipe.h ../RA-Automation/reservationcontroller.h ../RA-Automation/ordercontroller.h ../RA-Automation/grocerycontroller.h ../RA-Automation/menucontroller.h ../RA-Automation/menuitem.h ../RA-Automation/recipe.h ../RA-Automation/groceryitem.h ../RA-Automation/recipecontroller.h ../RA-Automation/fileaccess.h ../RA-Automation/recipebuilder.h ../RA-Automation/grocerybuilder.h ../RA-Automation/menuitembuilder.h ../RA-Automation/notificationcontroller.h ../RA-Automation/managemenu.h ../RA-Automation/viewrecipe.h ../RA-Automation/order.h ../RA-Automation/orderitem.h ../RA-Automation/manageorder.h ../RA-Automation/vieworder.h ../RA-Automation/iobserverinterface.h ../RA-Automation/viewallorders.h ../RA-Automation/managepay.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../RA-Automation/main.cpp ../RA-Automation/mainwindow.cpp ../RA-Automation/deserts.cpp ../RA-Automation/burgers.cpp ../RA-Automation/drinks.cpp ../RA-Automation/reservetable.cpp ../RA-Automation/employees.cpp ../RA-Automation/feedback.cpp ../RA-Automation/reports.cpp ../RA-Automation/managegrocery.cpp ../RA-Automation/managerecipe.cpp ../RA-Automation/reservationcontroller.cpp ../RA-Automation/ordercontroller.cpp ../RA-Automation/grocerycontroller.cpp ../RA-Automation/menucontroller.cpp ../RA-Automation/menuitem.cpp ../RA-Automation/recipe.cpp ../RA-Automation/groceryitem.cpp ../RA-Automation/recipecontroller.cpp ../RA-Automation/fileaccess.cpp ../RA-Automation/recipebuilder.cpp ../RA-Automation/grocerybuilder.cpp ../RA-Automation/menuitembuilder.cpp ../RA-Automation/notificationcontroller.cpp ../RA-Automation/managemenu.cpp ../RA-Automation/viewrecipe.cpp ../RA-Automation/order.cpp ../RA-Automation/orderitem.cpp ../RA-Automation/manageorder.cpp ../RA-Automation/vieworder.cpp ../RA-Automation/viewallorders.cpp ../RA-Automation/managepay.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../RA-Automation/mainwindow.ui ../RA-Automation/deserts.ui ../RA-Automation/burgers.ui ../RA-Automation/drinks.ui ../RA-Automation/reservetable.ui ../RA-Automation/employees.ui ../RA-Automation/feedback.ui ../RA-Automation/reports.ui ../RA-Automation/manageMenu.ui ../RA-Automation/manageRecipe.ui ../RA-Automation/viewrecipe.ui ../RA-Automation/manageGrocery.ui ../RA-Automation/viewOrder.ui ../RA-Automation/manageOrder.ui ../RA-Automation/vieworder.ui ../RA-Automation/viewallorders.ui ../RA-Automation/managepay.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../RA-Automation/mainwindow.h ../RA-Automation/deserts.h ../RA-Automation/burgers.h ../RA-Automation/drinks.h ../RA-Automation/reservetable.h ../RA-Automation/employees.h ../RA-Automation/reports.h ../RA-Automation/managegrocery.h ../RA-Automation/managerecipe.h ../RA-Automation/reservationcontroller.h ../RA-Automation/ordercontroller.h ../RA-Automation/grocerycontroller.h ../RA-Automation/menucontroller.h ../RA-Automation/menuitem.h ../RA-Automation/recipe.h ../RA-Automation/groceryitem.h ../RA-Automation/recipecontroller.h ../RA-Automation/fileaccess.h ../RA-Automation/recipebuilder.h ../RA-Automation/grocerybuilder.h ../RA-Automation/menuitembuilder.h ../RA-Automation/notificationcontroller.h ../RA-Automation/managemenu.h ../RA-Automation/viewrecipe.h ../RA-Automation/order.h ../RA-Automation/orderitem.h ../RA-Automation/manageorder.h ../RA-Automation/vieworder.h ../RA-Automation/iobserverinterface.h ../RA-Automation/viewallorders.h ../RA-Automation/managepay.h ../RA-Automation/managefeedback.h ../RA-Automation/feedbackcontroller.h ../RA-Automation/reviewreport.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../RA-Automation/main.cpp ../RA-Automation/mainwindow.cpp ../RA-Automation/deserts.cpp ../RA-Automation/burgers.cpp ../RA-Automation/drinks.cpp ../RA-Automation/reservetable.cpp ../RA-Automation/employees.cpp ../RA-Automation/reports.cpp ../RA-Automation/managegrocery.cpp ../RA-Automation/managerecipe.cpp ../RA-Automation/reservationcontroller.cpp ../RA-Automation/ordercontroller.cpp ../RA-Automation/grocerycontroller.cpp ../RA-Automation/menucontroller.cpp ../RA-Automation/menuitem.cpp ../RA-Automation/recipe.cpp ../RA-Automation/groceryitem.cpp ../RA-Automation/recipecontroller.cpp ../RA-Automation/fileaccess.cpp ../RA-Automation/recipebuilder.cpp ../RA-Automation/grocerybuilder.cpp ../RA-Automation/menuitembuilder.cpp ../RA-Automation/notificationcontroller.cpp ../RA-Automation/managemenu.cpp ../RA-Automation/viewrecipe.cpp ../RA-Automation/order.cpp ../RA-Automation/orderitem.cpp ../RA-Automation/manageorder.cpp ../RA-Automation/vieworder.cpp ../RA-Automation/viewallorders.cpp ../RA-Automation/managepay.cpp ../RA-Automation/managefeedback.cpp ../RA-Automation/feedbackcontroller.cpp ../RA-Automation/reviewreport.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../RA-Automation/mainwindow.ui ../RA-Automation/deserts.ui ../RA-Automation/burgers.ui ../RA-Automation/drinks.ui ../RA-Automation/reservetable.ui ../RA-Automation/employees.ui ../RA-Automation/reports.ui ../RA-Automation/manageMenu.ui ../RA-Automation/manageRecipe.ui ../RA-Automation/viewrecipe.ui ../RA-Automation/manageGrocery.ui ../RA-Automation/viewOrder.ui ../RA-Automation/manageOrder.ui ../RA-Automation/vieworder.ui ../RA-Automation/viewallorders.ui ../RA-Automation/managepay.ui ../RA-Automation/managefeedback.ui ../RA-Automation/reviewreport.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -847,6 +860,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r RA-Automation.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -901,9 +915,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -O2 -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.11 -Wall -W -dM -E -o moc_predefs.h /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_feedback.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp moc_managefeedback.cpp moc_reviewreport.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_feedback.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp moc_managefeedback.cpp moc_reviewreport.cpp
 moc_mainwindow.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../RA-Automation/managemenu.h \
@@ -919,6 +933,7 @@ moc_mainwindow.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framew
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QStringList \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		ui_managemenu.h \
 		../RA-Automation/managerecipe.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -928,6 +943,7 @@ moc_mainwindow.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framew
 		../RA-Automation/order.h \
 		../RA-Automation/orderitem.h \
 		../RA-Automation/viewallorders.h \
+		../RA-Automation/managepay.h \
 		../RA-Automation/mainwindow.h \
 		moc_predefs.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
@@ -968,13 +984,6 @@ moc_employees.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framewo
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang -I'/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation' -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/konalesureshs/Qt/5.11.0/clang_64/lib ../RA-Automation/employees.h -o moc_employees.cpp
 
-moc_feedback.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		../RA-Automation/feedback.h \
-		moc_predefs.h \
-		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
-	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang -I'/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation' -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/konalesureshs/Qt/5.11.0/clang_64/lib ../RA-Automation/feedback.h -o moc_feedback.cpp
-
 moc_reports.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
@@ -1011,6 +1020,7 @@ moc_managemenu.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framew
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QStringList \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		ui_managemenu.h \
 		../RA-Automation/managemenu.h \
 		moc_predefs.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
@@ -1072,13 +1082,27 @@ moc_managepay.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framewo
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang -I'/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation' -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/konalesureshs/Qt/5.11.0/clang_64/lib ../RA-Automation/managepay.h -o moc_managepay.cpp
 
+moc_managefeedback.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../RA-Automation/managefeedback.h \
+		moc_predefs.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
+	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang -I'/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation' -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/konalesureshs/Qt/5.11.0/clang_64/lib ../RA-Automation/managefeedback.h -o moc_managefeedback.cpp
+
+moc_reviewreport.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../RA-Automation/reviewreport.h \
+		moc_predefs.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
+	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang -I'/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation' -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/konalesureshs/Qt/5.11.0/clang_64/lib ../RA-Automation/reviewreport.h -o moc_reviewreport.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_feedback.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h
+compiler_uic_make_all: ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_feedback.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h
+	-$(DEL_FILE) ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h
 ui_mainwindow.h: ../RA-Automation/mainwindow.ui \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/mainwindow.ui -o ui_mainwindow.h
@@ -1102,10 +1126,6 @@ ui_reservetable.h: ../RA-Automation/reservetable.ui \
 ui_employees.h: ../RA-Automation/employees.ui \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/employees.ui -o ui_employees.h
-
-ui_feedback.h: ../RA-Automation/feedback.ui \
-		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
-	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/feedback.ui -o ui_feedback.h
 
 ui_reports.h: ../RA-Automation/reports.ui \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
@@ -1147,6 +1167,14 @@ ui_managepay.h: ../RA-Automation/managepay.ui \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/managepay.ui -o ui_managepay.h
 
+ui_managefeedback.h: ../RA-Automation/managefeedback.ui \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
+	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/managefeedback.ui -o ui_managefeedback.h
+
+ui_reviewreport.h: ../RA-Automation/reviewreport.ui \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
+	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/reviewreport.ui -o ui_reviewreport.h
+
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
 compiler_yacc_decl_make_all:
@@ -1175,6 +1203,7 @@ main.o: ../RA-Automation/main.cpp ../RA-Automation/mainwindow.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QStringList \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		ui_managemenu.h \
 		../RA-Automation/managerecipe.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -1184,6 +1213,7 @@ main.o: ../RA-Automation/main.cpp ../RA-Automation/mainwindow.h \
 		../RA-Automation/order.h \
 		../RA-Automation/orderitem.h \
 		../RA-Automation/viewallorders.h \
+		../RA-Automation/managepay.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../RA-Automation/main.cpp
@@ -1204,6 +1234,7 @@ mainwindow.o: ../RA-Automation/mainwindow.cpp ../RA-Automation/mainwindow.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QStringList \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		ui_managemenu.h \
 		../RA-Automation/managerecipe.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -1213,6 +1244,7 @@ mainwindow.o: ../RA-Automation/mainwindow.cpp ../RA-Automation/mainwindow.h \
 		../RA-Automation/order.h \
 		../RA-Automation/orderitem.h \
 		../RA-Automation/viewallorders.h \
+		../RA-Automation/managepay.h \
 		ui_mainwindow.h \
 		../RA-Automation/saladdialog.h \
 		../RA-Automation/burgers.h \
@@ -1220,9 +1252,9 @@ mainwindow.o: ../RA-Automation/mainwindow.cpp ../RA-Automation/mainwindow.h \
 		../RA-Automation/drinks.h \
 		../RA-Automation/reservetable.h \
 		../RA-Automation/employees.h \
-		../RA-Automation/feedback.h \
+		../RA-Automation/managefeedback.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../RA-Automation/managepay.h \
+		ui_managefeedback.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QDebug \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../RA-Automation/mainwindow.cpp
@@ -1262,12 +1294,6 @@ employees.o: ../RA-Automation/employees.cpp ../RA-Automation/employees.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o employees.o ../RA-Automation/employees.cpp
 
-feedback.o: ../RA-Automation/feedback.cpp ../RA-Automation/feedback.h \
-		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_feedback.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o feedback.o ../RA-Automation/feedback.cpp
-
 reports.o: ../RA-Automation/reports.cpp ../RA-Automation/reports.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -1296,6 +1322,7 @@ reports.o: ../RA-Automation/reports.cpp ../RA-Automation/reports.h \
 managegrocery.o: ../RA-Automation/managegrocery.cpp ../RA-Automation/managegrocery.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_managegrocery.h \
 		../RA-Automation/groceryitem.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QString \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
@@ -1318,6 +1345,7 @@ managerecipe.o: ../RA-Automation/managerecipe.cpp /Users/konalesureshs/Qt/5.11.0
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../RA-Automation/viewrecipe.h \
+		ui_managerecipe.h \
 		../RA-Automation/recipecontroller.h \
 		../RA-Automation/recipe.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QString \
@@ -1501,6 +1529,7 @@ managemenu.o: ../RA-Automation/managemenu.cpp ../RA-Automation/managemenu.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QStringList \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		ui_managemenu.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QDebug \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
@@ -1563,6 +1592,7 @@ manageorder.o: ../RA-Automation/manageorder.cpp ../RA-Automation/manageorder.h \
 		../RA-Automation/viewrecipe.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_manageorder.h \
 		../RA-Automation/ordercontroller.h \
 		../RA-Automation/menucontroller.h \
 		../RA-Automation/reservationcontroller.h \
@@ -1632,8 +1662,65 @@ viewallorders.o: ../RA-Automation/viewallorders.cpp ../RA-Automation/viewallorde
 managepay.o: ../RA-Automation/managepay.cpp ../RA-Automation/managepay.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_managepay.h
+		ui_managepay.h \
+		../RA-Automation/viewallorders.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../RA-Automation/order.h \
+		../RA-Automation/orderitem.h \
+		../RA-Automation/menuitem.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers/QList \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QStringList \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstringlist.h \
+		../RA-Automation/ordercontroller.h \
+		../RA-Automation/reservetable.h \
+		../RA-Automation/reservationcontroller.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QHBoxLayout \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qboxlayout.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QVBoxLayout \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QTableWidget \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qtablewidget.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QtAlgorithms \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qalgorithms.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QDebug \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o managepay.o ../RA-Automation/managepay.cpp
+
+managefeedback.o: ../RA-Automation/managefeedback.cpp ../RA-Automation/managefeedback.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_feedback.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QFile \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QDebug \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o managefeedback.o ../RA-Automation/managefeedback.cpp
+
+feedbackcontroller.o: ../RA-Automation/feedbackcontroller.cpp ../RA-Automation/feedbackcontroller.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QString \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers/QList \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers/qevent.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QDebug \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o feedbackcontroller.o ../RA-Automation/feedbackcontroller.cpp
+
+reviewreport.o: ../RA-Automation/reviewreport.cpp ../RA-Automation/reviewreport.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_reviewreport.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QFile \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qfile.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reviewreport.o ../RA-Automation/reviewreport.cpp
 
 qrc_images.o: qrc_images.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_images.o qrc_images.cpp
@@ -1655,9 +1742,6 @@ moc_reservetable.o: moc_reservetable.cpp
 
 moc_employees.o: moc_employees.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_employees.o moc_employees.cpp
-
-moc_feedback.o: moc_feedback.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_feedback.o moc_feedback.cpp
 
 moc_reports.o: moc_reports.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_reports.o moc_reports.cpp
@@ -1685,6 +1769,12 @@ moc_viewallorders.o: moc_viewallorders.cpp
 
 moc_managepay.o: moc_managepay.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_managepay.o moc_managepay.cpp
+
+moc_managefeedback.o: moc_managefeedback.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_managefeedback.o moc_managefeedback.cpp
+
+moc_reviewreport.o: moc_reviewreport.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_reviewreport.o moc_reviewreport.cpp
 
 ####### Install
 

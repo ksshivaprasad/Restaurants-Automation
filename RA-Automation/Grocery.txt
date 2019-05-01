@@ -1,4 +1,4 @@
-1,Onions,84	
+1,Onions,82	
 2,Garlic,198	
 3,Avocado,50	
 4,Olive,500	
@@ -9,8 +9,8 @@
 9,Carrot,50	
 10,Lettuce,30	
 12,Pea,10	
-12,Bun,66	
+12,Bun,62	
 13,Beef patties,100	
-14,Chicken patties,68	
+14,Chicken patties,66	
 15,Veg Patties,50	
 16,Tomatoes,100	

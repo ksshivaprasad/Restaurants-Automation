@@ -74,6 +74,17 @@ void OrderController::cancelOrder(order* order)
         }
     }
 }
+void OrderController::removeOrder(int tableId)
+{
+    for(int i = 0;i<this->submittedOrders.size();i++)
+    {
+        if(tableId == this->submittedOrders.at(i)->getTable_id())
+        {
+            this->submittedOrders.removeAt(i);
+            break;
+        }
+    }
+}
 void OrderController::updateOrder(order* order)
 {
     qDebug() << "Update order";

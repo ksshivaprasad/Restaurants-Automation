@@ -37,9 +37,10 @@ void managePay::on_SubmitButton_clicked()
         QMessageBox message;
         message.setText("Table ID cannot be empty!");
         message.exec();
-    } else if(submit == false)
+    } else
     {
         ui->makePaymentButton->setEnabled(true);
+        clearLayout(ui->verticalLayout);
 
         int tablenum = 0;
         tablenum = ui->tableId->text().toInt();
@@ -72,9 +73,9 @@ void managePay::on_SubmitButton_clicked()
                 totalAmount = totalAmount + (orderItems.at(j)->getMenuItem()->getPrice()*orderItems.at(j)->getQuantity());
                 printf("Total Amount %f",totalAmount);
 
-                ui->verticalLayout->addWidget(tableWidget);
-
             }
+
+            ui->verticalLayout->addWidget(tableWidget);
             ui->totalAmount->setText(QString::number(totalAmount));
         }
         submit = true;
@@ -91,6 +92,21 @@ void managePay::on_makePaymentButton_clicked()
        int tablenum = ui->tableId->text().toInt();
        qDebug() << tablenum;
 
+       OrderController::getInstance()->removeOrder(tablenum);
        ReservationController::getInstance()->freeTable(tablenum);
 
+}
+
+void managePay::clearLayout(QLayout *layout) {
+    QLayoutItem *item;
+    while((item = layout->takeAt(0))) {
+        if (item->layout()) {
+            clearLayout(item->layout());
+            delete item->layout();
+        }
+        if (item->widget()) {
+           delete item->widget();
+        }
+        delete item;
+    }
 }

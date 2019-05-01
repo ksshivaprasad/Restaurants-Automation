@@ -31,7 +31,6 @@ SOURCES += \
     drinks.cpp \
     reservetable.cpp \
     employees.cpp \
-    feedback.cpp \
     reports.cpp \
     managegrocery.cpp \
     managerecipe.cpp \
@@ -55,7 +54,10 @@ SOURCES += \
     manageorder.cpp \
     vieworder.cpp \
     viewallorders.cpp \
-    managepay.cpp
+    managepay.cpp \
+    managefeedback.cpp \
+    feedbackcontroller.cpp \
+    reviewreport.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -64,7 +66,6 @@ HEADERS += \
     drinks.h \
     reservetable.h \
     employees.h \
-    feedback.h \
     reports.h \
     managegrocery.h \
     managerecipe.h \
@@ -89,7 +90,10 @@ HEADERS += \
     vieworder.h \
     iobserverinterface.h \
     viewallorders.h \
-    managepay.h
+    managepay.h \
+    managefeedback.h \
+    feedbackcontroller.h \
+    reviewreport.h
 
 FORMS += \
         mainwindow.ui \
@@ -98,7 +102,6 @@ FORMS += \
     drinks.ui \
     reservetable.ui \
     employees.ui \
-    feedback.ui \
     reports.ui \
     manageMenu.ui \
     manageRecipe.ui \
@@ -108,7 +111,9 @@ FORMS += \
     manageOrder.ui \
     vieworder.ui \
     viewallorders.ui \
-    managepay.ui
+    managepay.ui \
+    managefeedback.ui \
+    reviewreport.ui
 
 RESOURCES += \
     images.qrc
