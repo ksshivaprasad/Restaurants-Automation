@@ -24,6 +24,7 @@ private slots:
 
 private:
     Ui::managePay *ui;
+    int submit = false;
 };
 
 #endif // MANAGEPAY_H

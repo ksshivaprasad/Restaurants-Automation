@@ -101,7 +101,7 @@ void manageOrder::on_reserveTableButton_clicked()
         ui->tableId->setText(QString::number(currentTable));
         ui->viewOrderButton->setEnabled(false);
         ui->createOrderButton->setEnabled(true);
-        ui->reserveTableButton->setEnabled(false);
+        //ui->reserveTableButton->setEnabled(false);
     } else
     {
         ui->reserveTableButton->setEnabled(false);

@@ -37,7 +37,7 @@ void managePay::on_SubmitButton_clicked()
         QMessageBox message;
         message.setText("Table ID cannot be empty!");
         message.exec();
-    } else
+    } else if(submit == false)
     {
         ui->makePaymentButton->setEnabled(true);
 
@@ -64,7 +64,7 @@ void managePay::on_SubmitButton_clicked()
 
                 tableWidget->setItem(rownum, 0, new QTableWidgetItem(QString::number(tablenum)));
 
-                tableWidget->setItem(rownum, 1,  new QTableWidgetItem(QString::number(orderItems.at(j)->getItem_id())));
+                tableWidget->setItem(rownum, 1, new QTableWidgetItem(QString::number(orderItems.at(j)->getItem_id())));
                 tableWidget->setItem(rownum, 2, new QTableWidgetItem(orderItems.at(j)->getMenuItem()->getName()));
                 tableWidget->setItem(rownum, 3, new QTableWidgetItem(QString::number(orderItems.at(j)->getQuantity())));
                 tableWidget->setItem(rownum, 4, new QTableWidgetItem(QString::number(orderItems.at(j)->getMenuItem()->getPrice()*orderItems.at(j)->getQuantity())));
@@ -77,6 +77,7 @@ void managePay::on_SubmitButton_clicked()
             }
             ui->totalAmount->setText(QString::number(totalAmount));
         }
+        submit = true;
     }
 }
 
@@ -90,7 +91,6 @@ void managePay::on_makePaymentButton_clicked()
        int tablenum = ui->tableId->text().toInt();
        qDebug() << tablenum;
 
-       //OrderController::cancelOrder()
        ReservationController::getInstance()->freeTable(tablenum);
 
 }
