@@ -7,7 +7,8 @@
 #include<QList>
 RecipeController* RecipeController::INSTANCE=0;
 
-QString RECIPE_FILE ="/Users/balasubramaniang/MS_Assignment/Second_sem/S:w_design/Restaurant_automation_1/Restaurants-Automation/RA-Automation/Recipes.txt";
+//QString RECIPE_FILE ="/Users/balasubramaniang/MS_Assignment/Second_sem/S:w_design/Restaurant_automation_1/Restaurants-Automation/RA-Automation/Recipes.txt";
+QString RECIPE_FILE ="/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation/Recipes.txt";
 RecipeController::RecipeController()
 {
     init();

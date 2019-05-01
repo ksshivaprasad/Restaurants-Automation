@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>viewRecipe</class>
  <widget class="QDialog" name="viewRecipe">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>View Recipe</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">

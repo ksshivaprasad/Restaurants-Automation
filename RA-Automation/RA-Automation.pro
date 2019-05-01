@@ -54,7 +54,8 @@ SOURCES += \
     orderitem.cpp \
     manageorder.cpp \
     vieworder.cpp \
-    viewallorders.cpp
+    viewallorders.cpp \
+    managepay.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -87,7 +88,8 @@ HEADERS += \
     manageorder.h \
     vieworder.h \
     iobserverinterface.h \
-    viewallorders.h
+    viewallorders.h \
+    managepay.h
 
 FORMS += \
         mainwindow.ui \
@@ -105,7 +107,8 @@ FORMS += \
     viewOrder.ui \
     manageOrder.ui \
     vieworder.ui \
-    viewallorders.ui
+    viewallorders.ui \
+    managepay.ui
 
 RESOURCES += \
     images.qrc

@@ -44,7 +44,7 @@ void viewAllOrders::setAllOrders()
 
     for(int i =0;i< orderItems.size();i++)
     {
-        if(orderItems.at(i) > 0)
+        if(orderItems.at(i) != 0)
         {
 
             tableWidget->setItem(i, 2,  new QTableWidgetItem(QString::number(orderItems.at(i)->getItem_id())));

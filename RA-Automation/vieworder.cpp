@@ -92,6 +92,8 @@ void viewOrder::on_submitOrderButton_clicked()
 {
     qDebug() << "In Submit Order";
     OrderController::getInstance()->submitOrder(this->myOrder);
-    ReservationController::getInstance()->freeTable(this->myOrder->getTable_id());
+   // ReservationController::getInstance()->freeTable(this->myOrder->getTable_id());
+    ui->viewOrderTableWidget->close();
+    QWidget::close();
 
 }

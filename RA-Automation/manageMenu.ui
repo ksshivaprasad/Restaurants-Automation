@@ -2,16 +2,22 @@
 <ui version="4.0">
  <class>manageMenu</class>
  <widget class="QWidget" name="manageMenu">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>804</width>
-    <height>496</height>
+    <width>1000</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string extracomment="Manage Menu">Manage Menu</string>
   </property>
   <widget class="QTableWidget" name="MenuListWidget">
    <property name="geometry">

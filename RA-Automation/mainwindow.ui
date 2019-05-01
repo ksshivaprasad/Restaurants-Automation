@@ -2,8 +2,11 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="enabled">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="geometry">
    <rect>
@@ -476,6 +479,9 @@
     </property>
     <addaction name="separator"/>
     <addaction name="actionViewMenu"/>
+    <addaction name="separator"/>
+    <addaction name="actionPayment"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -497,6 +503,29 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+  </widget>
   <action name="actionMenu">
    <property name="text">
     <string>Menu</string>
@@ -546,6 +575,9 @@
    </property>
   </action>
   <action name="actionContributors">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Contributors</string>
    </property>
@@ -558,6 +590,11 @@
   <action name="actionViewOrder">
    <property name="text">
     <string>Orders</string>
+   </property>
+  </action>
+  <action name="actionPayment">
+   <property name="text">
+    <string>Payment</string>
    </property>
   </action>
  </widget>

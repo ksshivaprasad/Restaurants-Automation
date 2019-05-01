@@ -15,6 +15,10 @@ public:
     explicit managePay(QWidget *parent = 0);
     ~managePay();
 
+private slots:
+    void on_pushButton_clicked();
+    void init();
+
 private:
     Ui::managePay *ui;
 };

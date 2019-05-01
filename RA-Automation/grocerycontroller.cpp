@@ -6,7 +6,7 @@
 #include<QList>
 #include<QDebug>
 GroceryController* GroceryController::INSTANCE=0;
-QString GROCERY_FILE_NAME = "/Users/balasubramaniang/MS_Assignment/Second_sem/S:w_design/Restaurant_automation_1/Restaurants-Automation/RA-Automation/Grocery.txt";
+QString GROCERY_FILE_NAME = "/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation/Grocery.txt";
 GroceryController::GroceryController()
 {
     init();

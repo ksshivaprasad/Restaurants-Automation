@@ -10,6 +10,10 @@
 #include "qmessagebox.h"
 #include "managemenu.h"
 #include "managerecipe.h"
+#include "ui_managemenu.h"
+#include "managepay.h"
+
+
 #include <QDebug>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -49,3 +53,13 @@ void MainWindow::on_actionViewOrder_triggered()
     viewAllOrders.show();
 }
 
+
+void MainWindow::on_actionExit_triggered()
+{
+    QApplication::quit();
+}
+
+void MainWindow::on_actionPayment_triggered()
+{
+    managePayment.show();
+}

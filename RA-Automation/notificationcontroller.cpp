@@ -2,7 +2,8 @@
 #include "fileaccess.h"
 #include<QStringList>
 NotificationController* NotificationController::INSTANCE=0;
-QString NOTIFICATION_FILE = "/Users/balasubramaniang/MS_Assignment/Second_sem/S:w_design/Restaurant_automation/Restaurants-Automation/RA-Automation/Notification.txt";
+//QString NOTIFICATION_FILE = "/Users/balasubramaniang/MS_Assignment/Second_sem/S:w_design/Restaurant_automation/Restaurants-Automation/RA-Automation/Notification.txt";
+QString NOTIFICATION_FILE = "/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation/Notification.txt";
 NotificationController::NotificationController()
 {
     init();

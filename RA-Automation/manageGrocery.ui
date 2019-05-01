@@ -2,16 +2,19 @@
 <ui version="4.0">
  <class>manageGrocery</class>
  <widget class="QWidget" name="manageGrocery">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>912</width>
-    <height>533</height>
+    <width>1000</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Manage Grocery</string>
   </property>
   <widget class="QTableWidget" name="groceryTableWidget">
    <property name="geometry">

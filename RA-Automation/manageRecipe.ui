@@ -2,16 +2,19 @@
 <ui version="4.0">
  <class>manageRecipe</class>
  <widget class="QWidget" name="manageRecipe">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1096</width>
-    <height>429</height>
+    <width>1000</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Manage Recipe</string>
   </property>
   <widget class="QTableWidget" name="RecipeListWidget">
    <property name="geometry">
@@ -29,7 +32,7 @@
      <x>19</x>
      <y>279</y>
      <width>811</width>
-     <height>208</height>
+     <height>171</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -95,10 +98,6 @@
     </item>
    </layout>
   </widget>
-  <zorder>RecipeListWidget</zorder>
-  <zorder>verticalLayoutWidget</zorder>
-  <zorder>horizontalLayoutWidget</zorder>
-  <zorder>verticalLayoutWidget_2</zorder>
  </widget>
  <resources/>
  <connections/>

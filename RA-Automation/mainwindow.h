@@ -7,6 +7,7 @@
 #include "managegrocery.h"
 #include "manageorder.h"
 #include "viewallorders.h"
+#include "managepay.h"
 namespace Ui {
 class MainWindow;
 }
@@ -32,6 +33,10 @@ private slots:
     void on_actionRecipe_triggered();
 
 
+    void on_actionExit_triggered();
+
+    void on_actionPayment_triggered();
+
 
 private:
     Ui::MainWindow *ui;
@@ -39,6 +44,8 @@ private:
     manageRecipe recipe;
     manageGrocery grocery;
     manageOrder menuOrder;
+    managePay managePayment;
+
     viewAllOrders viewAllOrders;
 };
 

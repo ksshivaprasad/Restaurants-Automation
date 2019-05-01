@@ -5,10 +5,10 @@
 #include "menucontroller.h"
 #include "reservationcontroller.h"
 #include "vieworder.h"
-#include<QDebug>
-#include<QHBoxLayout>
+#include <QDebug>
+#include <QHBoxLayout>
 #include <QObject>
-#include<QAbstractButton>
+#include <QAbstractButton>
 manageOrder::manageOrder(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::manageOrder)
@@ -68,6 +68,7 @@ void manageOrder::on_AddItemButton_clicked()
     qDebug() << "Row: " << row.toInt();
     qDebug() << "Key: " << key.toInt();
     currentOrder->addItem(MenuController::getInstance()->getMenuItem(key.toInt()),ui->menuOrdetTable->item(row.toInt(),4)->text().toInt());
+    ui->viewOrderButton->setEnabled(true);
 
 }
 void manageOrder::on_viewOrderButton_clicked()
@@ -83,14 +84,12 @@ void manageOrder::on_createOrderButton_clicked()
     qDebug() << "In Create Order";
     QList<MenuItem*> menuItems = MenuController::getInstance()->getMenu();
     currentOrder = OrderController::getInstance()->createOrder(currentTable);
-    ui->viewOrderButton->setEnabled(true);
     for(int i =0;i< menuItems.size();i++)
     {
         //QPushButton* button = qobject_cast<QPushButton*>(sender());
         QPushButton* addButton = qobject_cast<QPushButton*>(ui->menuOrdetTable->cellWidget(i,5));
         addButton->setEnabled(true);
     }
-
 
 }
 void manageOrder::on_reserveTableButton_clicked()
@@ -101,8 +100,12 @@ void manageOrder::on_reserveTableButton_clicked()
     {
         qDebug() << "Reserved " << currentTable;
         ui->tableId->setText(QString::number(currentTable));
+        ui->viewOrderButton->setEnabled(false);
         ui->createOrderButton->setEnabled(true);
-
+        ui->reserveTableButton->setEnabled(false);
+    } else
+    {
+        ui->reserveTableButton->setEnabled(false);
     }
 
 }
