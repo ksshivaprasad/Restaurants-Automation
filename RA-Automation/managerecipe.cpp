@@ -34,6 +34,12 @@ void manageRecipe::pupulateRecipe()
     ui->RecipeListWidget->clearContents();
     ui->RecipeListWidget->setRowCount(recipeItems.size());
     ui->RecipeListWidget->setColumnCount(3);
+
+    ui->RecipeListWidget->setColumnWidth(1, 250);
+    ui->RecipeListWidget->horizontalHeader()->setStretchLastSection(true);
+
+    ui->RecipeListWidget->setHorizontalHeaderLabels(QStringList() << tr("Recipe ID") << tr("Recipe Name"));
+
     for(int i =0;i< recipeItems.size();i++)
     {
 
@@ -74,6 +80,12 @@ void manageRecipe::pupulateGroceryTable()
 
     ui->groceryListWidget->setRowCount(groceryItems.size());
     ui->groceryListWidget->setColumnCount(2);
+
+    ui->groceryListWidget->setColumnWidth(0, 400);
+    ui->groceryListWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->groceryListWidget->setHorizontalHeaderLabels(QStringList() << tr("Grocery Name") << tr("Quantity"));
+
+
     for(int i =0;i< groceryItems.size();i++)
     {
         ui->groceryListWidget->setItem(i, 0,  new QTableWidgetItem((groceryItems.at(i)->getName())));

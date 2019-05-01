@@ -16,8 +16,11 @@ public:
     ~managePay();
 
 private slots:
-    void on_pushButton_clicked();
     void init();
+
+    void on_makePaymentButton_clicked();
+
+    void on_SubmitButton_clicked();
 
 private:
     Ui::managePay *ui;

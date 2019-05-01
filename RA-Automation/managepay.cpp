@@ -3,12 +3,16 @@
 #include "viewallorders.h"
 #include "order.h"
 #include "ordercontroller.h"
+#include "orderitem.h"
+#include "reservetable.h"
+#include "reservationcontroller.h"
+
 #include <QMessageBox>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QTableWidget>
 #include <QtAlgorithms>
-
+#include <QDebug>
 
 managePay::managePay(QWidget *parent) :
     QDialog(parent),
@@ -23,8 +27,10 @@ managePay::~managePay()
     delete ui;
 }
 
-void managePay::on_pushButton_clicked()
+void managePay::on_SubmitButton_clicked()
 {
+
+    float totalAmount = 0;
 
     if(ui->tableId->text().isEmpty())
     {
@@ -33,62 +39,58 @@ void managePay::on_pushButton_clicked()
         message.exec();
     } else
     {
-        ui->pushButton_2->setEnabled(true);
+        ui->makePaymentButton->setEnabled(true);
 
         int tablenum = 0;
         tablenum = ui->tableId->text().toInt();
-        printf("\n*********shiva: table number - %d*********\n",tablenum);
 
-        QList<order*> submittedOrders = OrderController::getInstance()->getAllSubmittedOrders();
-        //QWidget* pMainWidget = new QWidget();
-        //QVBoxLayout* pMainLayout = new QVBoxLayout(pMainWidget);
-        //qDeleteAll(ui->verticalLayout->children());
-        for(int j = 0;j< submittedOrders.size() ;j ++)
+        order* myOrder = OrderController::getInstance()->getOrderFRomTableId(tablenum);
+
+        if (myOrder != NULL)
         {
+            QList<orderItem*> orderItems = myOrder->getOrderItems();
+            int rownum = 0;
 
             QTableWidget* tableWidget = new QTableWidget();
 
-            QList<orderItem*> orderItems = submittedOrders.at(j)->getOrderItems();
+            tableWidget->setColumnCount(5);
+            tableWidget->setColumnWidth(2, 250);
+            tableWidget->horizontalHeader()->setStretchLastSection(true);
+            tableWidget->setRowCount(orderItems.size());
+            tableWidget->setHorizontalHeaderLabels(QStringList() << tr("Table ID") << tr("Order ID") << tr("Name") << tr("Quantity") << tr("Price"));
 
-            tableWidget->setRowCount(1);
-            tableWidget->setColumnCount(6);
-            tableWidget->setItem(0, 0, new QTableWidgetItem(QString::number(submittedOrders.at(j)->getTable_id())));
-            tableWidget->setItem(0, 1, new QTableWidgetItem(QString::number(submittedOrders.at(j)->getOrder_id())));
-
-            for(int i =0;i< orderItems.size();i++)
-            {
-            if(orderItems.at(i) != 0)
+            for(int j = 0;j< orderItems.size() ;j ++,rownum++)
             {
 
-                tableWidget->setItem(i, 2,  new QTableWidgetItem(QString::number(orderItems.at(i)->getItem_id())));
-                tableWidget->setItem(i, 3, new QTableWidgetItem(orderItems.at(i)->getMenuItem()->getName()));
-                tableWidget->setItem(i, 4, new QTableWidgetItem(QString::number(orderItems.at(i)->getQuantity())));
+                tableWidget->setItem(rownum, 0, new QTableWidgetItem(QString::number(tablenum)));
 
-                 //Button
-                 //QWidget* pWidget = new QWidget();
-                 //QPushButton* btn_prepare = new QPushButton();
-                 //btn_prepare->setText("Prepare");
-                 //btn_prepare->setProperty("Order-id",submittedOrders.at(j)->getOrder_id());
-                 //btn_prepare->setProperty("Item-id",orderItems.at(i)->getItem_id());
-                 //QObject::connect(btn_prepare, SIGNAL(clicked()),this, SLOT(on_prepareOrderButton_clicked()));
+                tableWidget->setItem(rownum, 1,  new QTableWidgetItem(QString::number(orderItems.at(j)->getItem_id())));
+                tableWidget->setItem(rownum, 2, new QTableWidgetItem(orderItems.at(j)->getMenuItem()->getName()));
+                tableWidget->setItem(rownum, 3, new QTableWidgetItem(QString::number(orderItems.at(j)->getQuantity())));
+                tableWidget->setItem(rownum, 4, new QTableWidgetItem(QString::number(orderItems.at(j)->getMenuItem()->getPrice()*orderItems.at(j)->getQuantity())));
 
+                totalAmount = totalAmount + (orderItems.at(j)->getMenuItem()->getPrice()*orderItems.at(j)->getQuantity());
+                printf("Total Amount %f",totalAmount);
 
-                 //QHBoxLayout* pLayout = new QHBoxLayout(pWidget);
-                 //pLayout->addWidget(btn_prepare);
-                 //pLayout->setAlignment(Qt::AlignCenter);
-                 //pLayout->setContentsMargins(0, 0, 0, 0);
-                 //pWidget->setLayout(pLayout);
-                 //tableWidget->setCellWidget(i, 5, pWidget);
+                ui->verticalLayout->addWidget(tableWidget);
+
             }
-
+            ui->totalAmount->setText(QString::number(totalAmount));
         }
-        ui->verticalLayout->addWidget(tableWidget);
-        }
-
     }
 }
 
 void managePay::init()
 {
-    ui->pushButton_2->setEnabled(false);
+    ui->makePaymentButton->setEnabled(false);
+}
+
+void managePay::on_makePaymentButton_clicked()
+{
+       int tablenum = ui->tableId->text().toInt();
+       qDebug() << tablenum;
+
+       //OrderController::cancelOrder()
+       ReservationController::getInstance()->freeTable(tablenum);
+
 }

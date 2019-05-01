@@ -87,3 +87,14 @@ void OrderController::updateOrder(order* order)
         }
     }
 }
+order* OrderController::getOrderFRomTableId(int tableId)
+{
+    for(int i = 0;i < submittedOrders.size();i++)
+    {
+        if(submittedOrders.at(i)->getTable_id() == tableId)
+        {
+            return submittedOrders.at(i);
+        }
+    }
+    return 0;
+}

@@ -34,12 +34,17 @@ void viewOrder::setOrderItems(order* currentOrder)
     ui->viewOrderTableWidget->setRowCount(orderItems.size());
     ui->viewOrderTableWidget->setColumnCount(4);
     ui->tableNoEdit->setText(QString::number(currentOrder->getTable_id()));
+
+    ui->viewOrderTableWidget->setColumnWidth(1, 200);
+    ui->viewOrderTableWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->viewOrderTableWidget->setHorizontalHeaderLabels(QStringList() << tr("Item ID") << tr("Item Name") << tr("Quantity"));
+
     for(int i =0;i< orderItems.size();i++)
     {
         if(orderItems.at(i) != 0)
         {
-            ui->viewOrderTableWidget->setItem(i, 0,  new QTableWidgetItem(QString::number(orderItems.at(i)->getItem_id())));
-            ui->viewOrderTableWidget->setItem(i, 1, new QTableWidgetItem(orderItems.at(i)->getMenuItem()->getName()));
+             ui->viewOrderTableWidget->setItem(i, 0,  new QTableWidgetItem(QString::number(orderItems.at(i)->getItem_id())));
+             ui->viewOrderTableWidget->setItem(i, 1, new QTableWidgetItem(orderItems.at(i)->getMenuItem()->getName()));
              ui->viewOrderTableWidget->setItem(i, 2, new QTableWidgetItem(QString::number(orderItems.at(i)->getQuantity())));
 
              //Button
@@ -92,7 +97,7 @@ void viewOrder::on_submitOrderButton_clicked()
 {
     qDebug() << "In Submit Order";
     OrderController::getInstance()->submitOrder(this->myOrder);
-   // ReservationController::getInstance()->freeTable(this->myOrder->getTable_id());
+
     ui->viewOrderTableWidget->close();
     QWidget::close();
 

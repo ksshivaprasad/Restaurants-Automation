@@ -16,7 +16,7 @@ class manageMenu : public QWidget
 public:
     explicit manageMenu(QWidget *parent = 0);
     ~manageMenu();
-    void pupulateMenu();
+    void populateMenu();
 
     void init();
 public slots:

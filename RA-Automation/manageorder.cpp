@@ -33,6 +33,12 @@ void manageOrder::pupulateMenu()
     ui->menuOrdetTable->clearContents();
     ui->menuOrdetTable->setRowCount(menuItems.size());
     ui->menuOrdetTable->setColumnCount(6);
+
+    ui->menuOrdetTable->setColumnWidth(1, 200);
+    ui->menuOrdetTable->setColumnWidth(2, 200);
+    ui->menuOrdetTable->horizontalHeader()->setStretchLastSection(true);
+    ui->menuOrdetTable->setHorizontalHeaderLabels(QStringList() << tr("Item ID") << tr("Name") << tr("Description") << tr("Price"));
+
     for(int i =0;i< menuItems.size();i++)
     {
 
@@ -71,14 +77,7 @@ void manageOrder::on_AddItemButton_clicked()
     ui->viewOrderButton->setEnabled(true);
 
 }
-void manageOrder::on_viewOrderButton_clicked()
-{
-    qDebug() << "In View Order";
-    viewOrder* viewOrder_m = new viewOrder(this);
-    viewOrder_m->setOrderItems(currentOrder);
-    viewOrder_m->show();
 
-}
 void manageOrder::on_createOrderButton_clicked()
 {
     qDebug() << "In Create Order";
@@ -110,4 +109,12 @@ void manageOrder::on_reserveTableButton_clicked()
 
 }
 
+void manageOrder::on_viewOrderButton_clicked()
+{
+    qDebug() << "In View Order";
+    viewOrder* viewOrder_m = new viewOrder(this);
+    viewOrder_m->setOrderItems(currentOrder);
+    viewOrder_m->show();
+    //viewOrder_m::isVisible();
 
+}

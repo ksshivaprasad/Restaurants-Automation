@@ -54,7 +54,7 @@
      <string>Enter Your Table ID:</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="SubmitButton">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -112,7 +112,7 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="makePaymentButton">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -128,7 +128,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="totalAmount">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -169,9 +169,9 @@
    <property name="geometry">
     <rect>
      <x>119</x>
-     <y>400</y>
+     <y>219</y>
      <width>741</width>
-     <height>80</height>
+     <height>191</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout"/>

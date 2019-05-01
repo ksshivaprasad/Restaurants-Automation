@@ -23,6 +23,7 @@ public:
      void cancelOrder(order* order);
      void updateOrder(order *order);
      order *getOrder(int orderId);
+     order *getOrderFRomTableId(int tableId);
 };
 
 #endif // ORDERCONTROLLER_H

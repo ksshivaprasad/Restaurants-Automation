@@ -16,7 +16,7 @@ manageMenu::manageMenu(QWidget *parent) :
 
 void manageMenu::init()
 {
-      pupulateMenu();
+      populateMenu();
 }
 
 manageMenu::~manageMenu()
@@ -24,20 +24,28 @@ manageMenu::~manageMenu()
     delete ui;
 }
 
-void manageMenu::pupulateMenu()
+void manageMenu::populateMenu()
 {
     qDebug() << "populateMenu";
     QList<MenuItem*> menuItems = MenuController::getInstance()->getMenu();
+
     ui->MenuListWidget->clearContents();
     ui->MenuListWidget->setRowCount(menuItems.size());
     ui->MenuListWidget->setColumnCount(5);
-    for(int i =0;i< menuItems.size();i++)
+
+    ui->MenuListWidget->setColumnWidth(1, 250);
+    ui->MenuListWidget->setColumnWidth(2, 250);
+    ui->MenuListWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->MenuListWidget->setHorizontalHeaderLabels(QStringList() << tr("Item ID") << tr("Item Name") << tr("Description") << tr("Price") << tr("Quantity") << tr("Add/Remove"));
+
+    for(int i = 0;i< menuItems.size();i++)
     {
 
         ui->MenuListWidget->setItem(i, 0,  new QTableWidgetItem(QString::number(menuItems.at(i)->getKey())));
         ui->MenuListWidget->setItem(i, 1, new QTableWidgetItem(menuItems.at(i)->getName()));
         ui->MenuListWidget->setItem(i, 2, new QTableWidgetItem(menuItems.at(i)->getDescription()));
         ui->MenuListWidget->setItem(i, 3, new QTableWidgetItem(QString::number(menuItems.at(i)->getPrice())));
+        //ui->MenuListWidget->setItem(i, 4, new QTableWidgetItem("Enter Quantity"));
 
         //Button
         QWidget* pWidget = new QWidget();
@@ -61,7 +69,7 @@ void manageMenu::on_removeButton_clicked()
     QVariant row = sender()->property("Key");
     //qDebug() << row.toInt();
     MenuController::getInstance()->removeMenuItem( row.toInt());
-    pupulateMenu();
+    populateMenu();
 }
 
 void manageMenu::on_addButton_clicked()
@@ -73,5 +81,5 @@ void manageMenu::on_addButton_clicked()
     ui->DescEdit->clear();
     ui->recipeIdEdit->clear();
     ui->PriceEdit->clear();
-    pupulateMenu();
+    populateMenu();
 }

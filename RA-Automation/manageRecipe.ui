@@ -22,15 +22,15 @@
      <x>20</x>
      <y>10</y>
      <width>811</width>
-     <height>151</height>
+     <height>231</height>
     </rect>
    </property>
   </widget>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>19</x>
-     <y>279</y>
+     <x>20</x>
+     <y>420</y>
      <width>811</width>
      <height>171</height>
     </rect>
@@ -86,10 +86,10 @@
   <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>19</x>
-     <y>169</y>
+     <x>20</x>
+     <y>260</y>
      <width>811</width>
-     <height>101</height>
+     <height>131</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">

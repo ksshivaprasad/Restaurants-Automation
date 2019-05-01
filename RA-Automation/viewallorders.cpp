@@ -28,8 +28,7 @@ viewAllOrders::~viewAllOrders()
 void viewAllOrders::setAllOrders()
 {
     QList<order*> submittedOrders = OrderController::getInstance()->getAllSubmittedOrders();
-    //QWidget* pMainWidget = new QWidget();
-    //QVBoxLayout* pMainLayout = new QVBoxLayout(pMainWidget);
+
     qDeleteAll(ui->verticalLayout->children());
     for(int j = 0;j< submittedOrders.size() ;j ++)
     {
