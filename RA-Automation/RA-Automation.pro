@@ -57,7 +57,9 @@ SOURCES += \
     managepay.cpp \
     managefeedback.cpp \
     feedbackcontroller.cpp \
-    reviewreport.cpp
+    reviewreport.cpp \
+    feedback.cpp \
+    viewnotifications.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -93,7 +95,9 @@ HEADERS += \
     managepay.h \
     managefeedback.h \
     feedbackcontroller.h \
-    reviewreport.h
+    reviewreport.h \
+    feedback.h \
+    viewnotifications.h
 
 FORMS += \
         mainwindow.ui \
@@ -113,7 +117,9 @@ FORMS += \
     viewallorders.ui \
     managepay.ui \
     managefeedback.ui \
-    reviewreport.ui
+    reviewreport.ui \
+    contributers.ui \
+    viewnotifications.ui
 
 RESOURCES += \
     images.qrc

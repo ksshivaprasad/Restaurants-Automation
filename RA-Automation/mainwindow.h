@@ -42,6 +42,8 @@ private slots:
 
     void on_actionFeedback_2_triggered();
 
+    void on_actionContributors_triggered();
+
 private:
     Ui::MainWindow *ui;
     manageMenu menu;

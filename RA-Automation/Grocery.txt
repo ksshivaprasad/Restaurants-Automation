@@ -1,16 +1,16 @@
-1,Onions,82	
-2,Garlic,198	
+1,Onions,77	
+2,Garlic,196	
 3,Avocado,50	
 4,Olive,500	
 5,Lime,100	
-6,Cilantro,20	
+6,Cilantro,14	
 7,Spinach,30	
 8,Cabbage,20	
 9,Carrot,50	
 10,Lettuce,30	
 12,Pea,10	
-12,Bun,62	
+12,Bun,58	
 13,Beef patties,100	
-14,Chicken patties,66	
+14,Chicken patties,45	
 15,Veg Patties,50	
 16,Tomatoes,100	

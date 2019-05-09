@@ -32,6 +32,7 @@ void viewAllOrders::setAllOrders()
     qDeleteAll(ui->verticalLayout->children());
     clearLayout(ui->verticalLayout);
 
+
     for(int j = 0;j< submittedOrders.size() ;j ++)
     {
         QTableWidget* tableWidget = new QTableWidget();
@@ -42,6 +43,8 @@ void viewAllOrders::setAllOrders()
         tableWidget->setColumnCount(6);
         tableWidget->setItem(0, 0, new QTableWidgetItem(QString::number(submittedOrders.at(j)->getTable_id())));
         tableWidget->setItem(0, 1, new QTableWidgetItem(QString::number(submittedOrders.at(j)->getOrder_id())));
+        //tableWidget->horizontalHeader()->setStretchLastSection(true);
+        tableWidget->setHorizontalHeaderLabels(QStringList() << tr("Table ID") << tr("Order ID") << tr("Item ID") << tr("Item Description") << tr("Quantity"));
 
         for(int i =0;i< orderItems.size();i++)
         {

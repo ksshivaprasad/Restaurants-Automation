@@ -83,7 +83,9 @@ SOURCES       = ../RA-Automation/main.cpp \
 		../RA-Automation/managepay.cpp \
 		../RA-Automation/managefeedback.cpp \
 		../RA-Automation/feedbackcontroller.cpp \
-		../RA-Automation/reviewreport.cpp qrc_images.cpp \
+		../RA-Automation/reviewreport.cpp \
+		../RA-Automation/feedback.cpp \
+		../RA-Automation/viewnotifications.cpp qrc_images.cpp \
 		moc_mainwindow.cpp \
 		moc_deserts.cpp \
 		moc_burgers.cpp \
@@ -100,7 +102,8 @@ SOURCES       = ../RA-Automation/main.cpp \
 		moc_viewallorders.cpp \
 		moc_managepay.cpp \
 		moc_managefeedback.cpp \
-		moc_reviewreport.cpp
+		moc_reviewreport.cpp \
+		moc_viewnotifications.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		deserts.o \
@@ -135,6 +138,8 @@ OBJECTS       = main.o \
 		managefeedback.o \
 		feedbackcontroller.o \
 		reviewreport.o \
+		feedback.o \
+		viewnotifications.o \
 		qrc_images.o \
 		moc_mainwindow.o \
 		moc_deserts.o \
@@ -152,7 +157,8 @@ OBJECTS       = main.o \
 		moc_viewallorders.o \
 		moc_managepay.o \
 		moc_managefeedback.o \
-		moc_reviewreport.o
+		moc_reviewreport.o \
+		moc_viewnotifications.o
 DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/qdevice.pri \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/device_config.prf \
@@ -375,7 +381,9 @@ DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pr
 		../RA-Automation/managepay.h \
 		../RA-Automation/managefeedback.h \
 		../RA-Automation/feedbackcontroller.h \
-		../RA-Automation/reviewreport.h ../RA-Automation/main.cpp \
+		../RA-Automation/reviewreport.h \
+		../RA-Automation/feedback.h \
+		../RA-Automation/viewnotifications.h ../RA-Automation/main.cpp \
 		../RA-Automation/mainwindow.cpp \
 		../RA-Automation/deserts.cpp \
 		../RA-Automation/burgers.cpp \
@@ -408,7 +416,9 @@ DIST          = /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/spec_pr
 		../RA-Automation/managepay.cpp \
 		../RA-Automation/managefeedback.cpp \
 		../RA-Automation/feedbackcontroller.cpp \
-		../RA-Automation/reviewreport.cpp
+		../RA-Automation/reviewreport.cpp \
+		../RA-Automation/feedback.cpp \
+		../RA-Automation/viewnotifications.cpp
 QMAKE_TARGET  = RA-Automation
 DESTDIR       = 
 TARGET        = RA-Automation.app/Contents/MacOS/RA-Automation
@@ -422,7 +432,7 @@ EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ACTIVE_ARCHS), $(EXPORT_ACTIVE_
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h ui_contributers.h ui_viewnotifications.h $(OBJECTS)  
 	@test -d RA-Automation.app/Contents/MacOS/ || mkdir -p RA-Automation.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -848,9 +858,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../RA-Automation/images.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../RA-Automation/mainwindow.h ../RA-Automation/deserts.h ../RA-Automation/burgers.h ../RA-Automation/drinks.h ../RA-Automation/reservetable.h ../RA-Automation/employees.h ../RA-Automation/reports.h ../RA-Automation/managegrocery.h ../RA-Automation/managerecipe.h ../RA-Automation/reservationcontroller.h ../RA-Automation/ordercontroller.h ../RA-Automation/grocerycontroller.h ../RA-Automation/menucontroller.h ../RA-Automation/menuitem.h ../RA-Automation/recipe.h ../RA-Automation/groceryitem.h ../RA-Automation/recipecontroller.h ../RA-Automation/fileaccess.h ../RA-Automation/recipebuilder.h ../RA-Automation/grocerybuilder.h ../RA-Automation/menuitembuilder.h ../RA-Automation/notificationcontroller.h ../RA-Automation/managemenu.h ../RA-Automation/viewrecipe.h ../RA-Automation/order.h ../RA-Automation/orderitem.h ../RA-Automation/manageorder.h ../RA-Automation/vieworder.h ../RA-Automation/iobserverinterface.h ../RA-Automation/viewallorders.h ../RA-Automation/managepay.h ../RA-Automation/managefeedback.h ../RA-Automation/feedbackcontroller.h ../RA-Automation/reviewreport.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../RA-Automation/main.cpp ../RA-Automation/mainwindow.cpp ../RA-Automation/deserts.cpp ../RA-Automation/burgers.cpp ../RA-Automation/drinks.cpp ../RA-Automation/reservetable.cpp ../RA-Automation/employees.cpp ../RA-Automation/reports.cpp ../RA-Automation/managegrocery.cpp ../RA-Automation/managerecipe.cpp ../RA-Automation/reservationcontroller.cpp ../RA-Automation/ordercontroller.cpp ../RA-Automation/grocerycontroller.cpp ../RA-Automation/menucontroller.cpp ../RA-Automation/menuitem.cpp ../RA-Automation/recipe.cpp ../RA-Automation/groceryitem.cpp ../RA-Automation/recipecontroller.cpp ../RA-Automation/fileaccess.cpp ../RA-Automation/recipebuilder.cpp ../RA-Automation/grocerybuilder.cpp ../RA-Automation/menuitembuilder.cpp ../RA-Automation/notificationcontroller.cpp ../RA-Automation/managemenu.cpp ../RA-Automation/viewrecipe.cpp ../RA-Automation/order.cpp ../RA-Automation/orderitem.cpp ../RA-Automation/manageorder.cpp ../RA-Automation/vieworder.cpp ../RA-Automation/viewallorders.cpp ../RA-Automation/managepay.cpp ../RA-Automation/managefeedback.cpp ../RA-Automation/feedbackcontroller.cpp ../RA-Automation/reviewreport.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../RA-Automation/mainwindow.ui ../RA-Automation/deserts.ui ../RA-Automation/burgers.ui ../RA-Automation/drinks.ui ../RA-Automation/reservetable.ui ../RA-Automation/employees.ui ../RA-Automation/reports.ui ../RA-Automation/manageMenu.ui ../RA-Automation/manageRecipe.ui ../RA-Automation/viewrecipe.ui ../RA-Automation/manageGrocery.ui ../RA-Automation/viewOrder.ui ../RA-Automation/manageOrder.ui ../RA-Automation/vieworder.ui ../RA-Automation/viewallorders.ui ../RA-Automation/managepay.ui ../RA-Automation/managefeedback.ui ../RA-Automation/reviewreport.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../RA-Automation/mainwindow.h ../RA-Automation/deserts.h ../RA-Automation/burgers.h ../RA-Automation/drinks.h ../RA-Automation/reservetable.h ../RA-Automation/employees.h ../RA-Automation/reports.h ../RA-Automation/managegrocery.h ../RA-Automation/managerecipe.h ../RA-Automation/reservationcontroller.h ../RA-Automation/ordercontroller.h ../RA-Automation/grocerycontroller.h ../RA-Automation/menucontroller.h ../RA-Automation/menuitem.h ../RA-Automation/recipe.h ../RA-Automation/groceryitem.h ../RA-Automation/recipecontroller.h ../RA-Automation/fileaccess.h ../RA-Automation/recipebuilder.h ../RA-Automation/grocerybuilder.h ../RA-Automation/menuitembuilder.h ../RA-Automation/notificationcontroller.h ../RA-Automation/managemenu.h ../RA-Automation/viewrecipe.h ../RA-Automation/order.h ../RA-Automation/orderitem.h ../RA-Automation/manageorder.h ../RA-Automation/vieworder.h ../RA-Automation/iobserverinterface.h ../RA-Automation/viewallorders.h ../RA-Automation/managepay.h ../RA-Automation/managefeedback.h ../RA-Automation/feedbackcontroller.h ../RA-Automation/reviewreport.h ../RA-Automation/feedback.h ../RA-Automation/viewnotifications.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../RA-Automation/main.cpp ../RA-Automation/mainwindow.cpp ../RA-Automation/deserts.cpp ../RA-Automation/burgers.cpp ../RA-Automation/drinks.cpp ../RA-Automation/reservetable.cpp ../RA-Automation/employees.cpp ../RA-Automation/reports.cpp ../RA-Automation/managegrocery.cpp ../RA-Automation/managerecipe.cpp ../RA-Automation/reservationcontroller.cpp ../RA-Automation/ordercontroller.cpp ../RA-Automation/grocerycontroller.cpp ../RA-Automation/menucontroller.cpp ../RA-Automation/menuitem.cpp ../RA-Automation/recipe.cpp ../RA-Automation/groceryitem.cpp ../RA-Automation/recipecontroller.cpp ../RA-Automation/fileaccess.cpp ../RA-Automation/recipebuilder.cpp ../RA-Automation/grocerybuilder.cpp ../RA-Automation/menuitembuilder.cpp ../RA-Automation/notificationcontroller.cpp ../RA-Automation/managemenu.cpp ../RA-Automation/viewrecipe.cpp ../RA-Automation/order.cpp ../RA-Automation/orderitem.cpp ../RA-Automation/manageorder.cpp ../RA-Automation/vieworder.cpp ../RA-Automation/viewallorders.cpp ../RA-Automation/managepay.cpp ../RA-Automation/managefeedback.cpp ../RA-Automation/feedbackcontroller.cpp ../RA-Automation/reviewreport.cpp ../RA-Automation/feedback.cpp ../RA-Automation/viewnotifications.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../RA-Automation/mainwindow.ui ../RA-Automation/deserts.ui ../RA-Automation/burgers.ui ../RA-Automation/drinks.ui ../RA-Automation/reservetable.ui ../RA-Automation/employees.ui ../RA-Automation/reports.ui ../RA-Automation/manageMenu.ui ../RA-Automation/manageRecipe.ui ../RA-Automation/viewrecipe.ui ../RA-Automation/manageGrocery.ui ../RA-Automation/viewOrder.ui ../RA-Automation/manageOrder.ui ../RA-Automation/vieworder.ui ../RA-Automation/viewallorders.ui ../RA-Automation/managepay.ui ../RA-Automation/managefeedback.ui ../RA-Automation/reviewreport.ui ../RA-Automation/contributers.ui ../RA-Automation/viewnotifications.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -915,9 +925,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -O2 -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.11 -Wall -W -dM -E -o moc_predefs.h /Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp moc_managefeedback.cpp moc_reviewreport.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp moc_managefeedback.cpp moc_reviewreport.cpp moc_viewnotifications.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp moc_managefeedback.cpp moc_reviewreport.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_deserts.cpp moc_burgers.cpp moc_drinks.cpp moc_reservetable.cpp moc_employees.cpp moc_reports.cpp moc_managegrocery.cpp moc_managerecipe.cpp moc_managemenu.cpp moc_viewrecipe.cpp moc_manageorder.cpp moc_vieworder.cpp moc_viewallorders.cpp moc_managepay.cpp moc_managefeedback.cpp moc_reviewreport.cpp moc_viewnotifications.cpp
 moc_mainwindow.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../RA-Automation/managemenu.h \
@@ -1096,13 +1106,20 @@ moc_reviewreport.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.fram
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang -I'/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation' -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/konalesureshs/Qt/5.11.0/clang_64/lib ../RA-Automation/reviewreport.h -o moc_reviewreport.cpp
 
+moc_viewnotifications.cpp: /Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../RA-Automation/viewnotifications.h \
+		moc_predefs.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc
+	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/konalesureshs/Qt/5.11.0/clang_64/mkspecs/macx-clang -I'/Users/konalesureshs/Desktop/CSUF/Spring 2019/SW Design/CPSC462- Project/CPSC462/Restaurants-Automation/RA-Automation' -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtGui.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtSql.framework/Headers -I/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/konalesureshs/Qt/5.11.0/clang_64/lib ../RA-Automation/viewnotifications.h -o moc_viewnotifications.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h
+compiler_uic_make_all: ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h ui_contributers.h ui_viewnotifications.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h
+	-$(DEL_FILE) ui_mainwindow.h ui_deserts.h ui_burgers.h ui_drinks.h ui_reservetable.h ui_employees.h ui_reports.h ui_manageMenu.h ui_manageRecipe.h ui_viewrecipe.h ui_manageGrocery.h ui_viewOrder.h ui_manageOrder.h ui_vieworder.h ui_viewallorders.h ui_managepay.h ui_managefeedback.h ui_reviewreport.h ui_contributers.h ui_viewnotifications.h
 ui_mainwindow.h: ../RA-Automation/mainwindow.ui \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/mainwindow.ui -o ui_mainwindow.h
@@ -1174,6 +1191,14 @@ ui_managefeedback.h: ../RA-Automation/managefeedback.ui \
 ui_reviewreport.h: ../RA-Automation/reviewreport.ui \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
 	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/reviewreport.ui -o ui_reviewreport.h
+
+ui_contributers.h: ../RA-Automation/contributers.ui \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
+	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/contributers.ui -o ui_contributers.h
+
+ui_viewnotifications.h: ../RA-Automation/viewnotifications.ui \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic
+	/Users/konalesureshs/Qt/5.11.0/clang_64/bin/uic ../RA-Automation/viewnotifications.ui -o ui_viewnotifications.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -1255,6 +1280,7 @@ mainwindow.o: ../RA-Automation/mainwindow.cpp ../RA-Automation/mainwindow.h \
 		../RA-Automation/managefeedback.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		ui_managefeedback.h \
+		../RA-Automation/reviewreport.h \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/QDebug \
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../RA-Automation/mainwindow.cpp
@@ -1722,6 +1748,15 @@ reviewreport.o: ../RA-Automation/reviewreport.cpp ../RA-Automation/reviewreport.
 		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtCore.framework/Headers/qfile.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o reviewreport.o ../RA-Automation/reviewreport.cpp
 
+feedback.o: ../RA-Automation/feedback.cpp ../RA-Automation/feedback.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o feedback.o ../RA-Automation/feedback.cpp
+
+viewnotifications.o: ../RA-Automation/viewnotifications.cpp ../RA-Automation/viewnotifications.h \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/konalesureshs/Qt/5.11.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_viewnotifications.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewnotifications.o ../RA-Automation/viewnotifications.cpp
+
 qrc_images.o: qrc_images.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_images.o qrc_images.cpp
 
@@ -1775,6 +1810,9 @@ moc_managefeedback.o: moc_managefeedback.cpp
 
 moc_reviewreport.o: moc_reviewreport.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_reviewreport.o moc_reviewreport.cpp
+
+moc_viewnotifications.o: moc_viewnotifications.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_viewnotifications.o moc_viewnotifications.cpp
 
 ####### Install
 

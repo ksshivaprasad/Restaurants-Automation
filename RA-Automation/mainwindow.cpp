@@ -78,3 +78,11 @@ void MainWindow::on_actionFeedback_2_triggered()
     reviewReport review;
     review.exec();
 }
+
+void MainWindow::on_actionContributors_triggered()
+{
+    QMessageBox contributors;
+
+    contributors.setText("Geethanjali B        gbalas@csu.fullerton.edu  \nShivaprasad K S  shivaprasadks@csu.fullerton.edu  \nHetvi Desai           hetvidesai@csu.fullerton.edu ");
+    contributors.exec();
+}

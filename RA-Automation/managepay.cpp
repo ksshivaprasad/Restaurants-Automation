@@ -94,6 +94,7 @@ void managePay::on_makePaymentButton_clicked()
 
        OrderController::getInstance()->removeOrder(tablenum);
        ReservationController::getInstance()->freeTable(tablenum);
+       clearLayout(ui->verticalLayout);
 
 }
 
